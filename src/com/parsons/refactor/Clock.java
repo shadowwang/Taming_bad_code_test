@@ -5,4 +5,9 @@ package com.parsons.refactor;
  */
 public abstract class Clock {
 
+    private final int UTC_OFFSET = 0;
+
+    private int mLocalTime;
+
+    public abstract void setLocalTime(int localTime);
 }
