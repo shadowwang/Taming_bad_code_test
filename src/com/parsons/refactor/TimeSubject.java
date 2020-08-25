@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public abstract class TimeSubject {
 
-    private Map<String, Clock> clocks = new HashMap<>();
+    protected Map<String, Clock> clocks = new HashMap<>();
 
     public void attach(String cityName, Clock clock) {
         clocks.put(cityName, clock);
