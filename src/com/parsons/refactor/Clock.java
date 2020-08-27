@@ -5,7 +5,7 @@ package com.parsons.refactor;
  */
 public abstract class Clock {
 
-    protected static final int UTC_OFFSET = 0;
+    protected static final int UTC_OFFSET = 0;//时差
 
     protected int localTime;
 
