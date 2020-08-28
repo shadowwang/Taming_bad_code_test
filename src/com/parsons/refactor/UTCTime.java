@@ -19,4 +19,10 @@ public class UTCTime extends TimeSubject {
             clock.setLocalTime(Clock.toLocalTime(this.mUtcZeroTime));
         }
     }
+
+    public void printTimeOfAllClocks() {
+        for (String clockName : super.clocks.keySet()) {
+            System.out.println(clockName + ": " + super.clocks.get(clockName).getTime());
+        }
+    }
 }

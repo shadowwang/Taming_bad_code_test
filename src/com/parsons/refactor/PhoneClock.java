@@ -7,6 +7,14 @@ public class PhoneClock extends Clock {
 
     private UTCTime mUtcTime;
 
+    public PhoneClock(int offset) {
+        super(offset);
+    }
+
+    public void setUtcTime(UTCTime utcTime) {
+        this.mUtcTime = utcTime;
+    }
+
     @Override
     public void setLocalTime(int localTime) {
         super.localTime = localTime;
