@@ -5,7 +5,7 @@ package com.parsons.refactor;
  */
 public abstract class Clock {
 
-    protected static int UTC_OFFSET;//时差
+    protected int UTC_OFFSET;//时差
 
     protected int localTime;
 
@@ -15,8 +15,8 @@ public abstract class Clock {
 
     public abstract void setLocalTime(int localTime);
 
-    public static int toLocalTime(int utcZeroTime) {
-        return utcZeroTime + UTC_OFFSET;
+    public void setLocalTimeFromUtcZeroTime(int utcZeroTime) {
+        localTime = utcZeroTime + UTC_OFFSET;
     }
 
     public String getTime() {
