@@ -16,10 +16,14 @@ public abstract class Clock {
     public abstract void setLocalTime(int localTime);
 
     public void setLocalTimeFromUtcZeroTime(int utcZeroTime) {
-        localTime = utcZeroTime + UTC_OFFSET;
+        localTime = makeHourWith0To23(utcZeroTime + UTC_OFFSET);
     }
 
     public String getTime() {
         return String.valueOf(localTime);
+    }
+
+    public int makeHourWith0To23(int hour) {
+        return (hour + 24) % 24;
     }
 }
