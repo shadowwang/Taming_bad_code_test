@@ -2,11 +2,19 @@ package com.parsons.refactor.tdd;
 
 public class CityClock {
 
-    public CityClock(int offset) {
+    private int utcOffset;
 
+    public void setUtcZeroTime(int utcZeroTime) {
+        this.utcZeroTime = utcZeroTime;
+    }
+
+    private int utcZeroTime;
+
+    public CityClock(int offset) {
+        this.utcOffset = offset;
     }
 
     public int getTime() {
-        return 1;
+        return this.utcOffset + this.utcZeroTime;
     }
 }
