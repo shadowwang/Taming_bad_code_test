@@ -4,6 +4,7 @@ public class PhoneClock {
 
     private CityClock mCityClock;
     private int mUtcOffset;
+    private HelloWordClockSystem mHelloWordClockSystem;
 
     public PhoneClock(int offset) {
         this.mUtcOffset = offset;
@@ -14,6 +15,12 @@ public class PhoneClock {
     }
 
     public void setTime(int time) {
-        this.mCityClock.setUtcZeroTime(time - this.mUtcOffset);
+        for (CityClock cityClock : mHelloWordClockSystem.getCityClocks()) {
+            cityClock.setUtcZeroTime(time - this.mUtcOffset);
+        }
+    }
+
+    public void setHelloWordClockSystem(HelloWordClockSystem helloWordClockSystem) {
+        this.mHelloWordClockSystem = helloWordClockSystem;
     }
 }
