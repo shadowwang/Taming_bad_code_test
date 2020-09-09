@@ -1,8 +1,6 @@
 package com.parsons.refactor.tdd;
 
-public class CityClock {
-
-    private int utcOffset;
+public class CityClock extends Clock {
 
     public void setUtcZeroTime(int utcZeroTime) {
         this.utcZeroTime = utcZeroTime;
@@ -11,7 +9,7 @@ public class CityClock {
     private int utcZeroTime;
 
     public CityClock(int offset) {
-        this.utcOffset = offset;
+        super(offset);
     }
 
     public int getTime() {

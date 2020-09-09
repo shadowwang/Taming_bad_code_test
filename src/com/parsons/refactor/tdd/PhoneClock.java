@@ -1,22 +1,16 @@
 package com.parsons.refactor.tdd;
 
-public class PhoneClock {
+public class PhoneClock extends Clock{
 
-    private CityClock mCityClock;
-    private int mUtcOffset;
     private HelloWordClockSystem mHelloWordClockSystem;
 
     public PhoneClock(int offset) {
-        this.mUtcOffset = offset;
-    }
-
-    public void setCityClock(CityClock cityClock) {
-        this.mCityClock = cityClock;
+        super(offset);
     }
 
     public void setTime(int time) {
         for (CityClock cityClock : mHelloWordClockSystem.getCityClocks()) {
-            cityClock.setUtcZeroTime(time - this.mUtcOffset);
+            cityClock.setUtcZeroTime(time - this.utcOffset);
         }
     }
 
